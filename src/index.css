@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* NyumbaFlow design system — warm & approachable
+   Palette: terracotta primary, deep forest secondary, warm cream surfaces
+   All colors HSL.
+*/
+
+@layer base {
+  :root {
+    /* Surfaces — clean & airy */
+    --background: 40 30% 99%;          /* near-white warm */
+    --foreground: 25 20% 18%;          /* soft charcoal */
+
+    --card: 0 0% 100%;
+    --card-foreground: 25 20% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 20% 18%;
+
+    /* Brand */
+    --primary: 12 60% 53%;             /* terracotta */
+    --primary-foreground: 0 0% 100%;
+    --primary-soft: 14 70% 95%;
+    --primary-glow: 18 80% 68%;
+
+    --secondary: 158 32% 30%;          /* deep forest */
+    --secondary-foreground: 0 0% 100%;
+    --secondary-soft: 158 25% 94%;
+
+    --muted: 36 20% 95%;
+    --muted-foreground: 25 12% 45%;
+
+    --accent: 36 50% 93%;              /* sand */
+    --accent-foreground: 25 20% 18%;
+
+    --destructive: 0 70% 48%;
+    --destructive-foreground: 38 50% 98%;
+
+    --success: 145 50% 38%;
+    --success-foreground: 38 50% 98%;
+
+    --warning: 35 90% 50%;
+    --warning-foreground: 25 30% 15%;
+
+    --border: 30 15% 90%;
+    --input: 30 15% 90%;
+    --ring: 12 60% 53%;
+
+    --radius: 0.85rem;
+
+    /* Gradients */
+    --gradient-warm: linear-gradient(135deg, hsl(12 55% 51%), hsl(18 75% 65%));
+    --gradient-clay: linear-gradient(160deg, hsl(36 60% 92%), hsl(14 50% 88%));
+    --gradient-forest: linear-gradient(135deg, hsl(158 32% 28%), hsl(158 35% 38%));
+
+    /* Shadows — soft, clay-like */
+    --shadow-soft: 0 2px 8px -2px hsl(25 30% 25% / 0.08), 0 8px 24px -8px hsl(25 30% 25% / 0.08);
+    --shadow-warm: 0 8px 30px -8px hsl(12 55% 51% / 0.25);
+    --shadow-card: 0 1px 3px hsl(25 30% 25% / 0.04), 0 4px 16px -6px hsl(25 30% 25% / 0.06);
+
+    /* Sidebar */
+    --sidebar-background: 158 32% 16%;
+    --sidebar-foreground: 38 40% 92%;
+    --sidebar-primary: 12 55% 51%;
+    --sidebar-primary-foreground: 38 50% 98%;
+    --sidebar-accent: 158 30% 22%;
+    --sidebar-accent-foreground: 38 40% 95%;
+    --sidebar-border: 158 25% 22%;
+    --sidebar-ring: 12 55% 51%;
+  }
+
+  .dark {
+    --background: 25 20% 10%;
+    --foreground: 38 40% 92%;
+    --card: 25 20% 13%;
+    --card-foreground: 38 40% 92%;
+    --popover: 25 20% 13%;
+    --popover-foreground: 38 40% 92%;
+    --primary: 14 65% 58%;
+    --primary-foreground: 25 25% 10%;
+    --primary-soft: 14 30% 22%;
+    --primary-glow: 18 75% 65%;
+    --secondary: 158 30% 38%;
+    --secondary-foreground: 38 40% 95%;
+    --secondary-soft: 158 25% 20%;
+    --muted: 25 15% 18%;
+    --muted-foreground: 36 20% 65%;
+    --accent: 25 15% 22%;
+    --accent-foreground: 38 40% 92%;
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 38 40% 95%;
+    --success: 145 50% 45%;
+    --success-foreground: 38 40% 95%;
+    --warning: 35 90% 55%;
+    --warning-foreground: 25 30% 10%;
+    --border: 25 15% 22%;
+    --input: 25 15% 22%;
+    --ring: 14 65% 58%;
+    --sidebar-background: 25 20% 8%;
+    --sidebar-foreground: 38 40% 92%;
+    --sidebar-primary: 14 65% 58%;
+    --sidebar-primary-foreground: 25 25% 10%;
+    --sidebar-accent: 25 15% 14%;
+    --sidebar-accent-foreground: 38 40% 92%;
+    --sidebar-border: 25 15% 18%;
+    --sidebar-ring: 14 65% 58%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { font-family: 'DM Sans', system-ui, sans-serif; }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "ss01", "cv11";
+  }
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Fraunces', Georgia, serif;
+    font-feature-settings: "ss01";
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer utilities {
+  .bg-gradient-warm { background-image: var(--gradient-warm); }
+  .bg-gradient-clay { background-image: var(--gradient-clay); }
+  .bg-gradient-forest { background-image: var(--gradient-forest); }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-warm { box-shadow: var(--shadow-warm); }
+  .shadow-card { box-shadow: var(--shadow-card); }
+  .text-balance { text-wrap: balance; }
+}
